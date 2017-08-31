@@ -6,7 +6,8 @@ class aqui{
 	Scanner entrada=new Scanner(System.in);
 	System.out.println("informe sua idade:");
 	x=entrada.nextInt();
-		if (x>=18){
+	boolean maiorD = x>=18;
+		if (maiorD){
 			System.out.println("maior de idade");
 		}
 		else{
