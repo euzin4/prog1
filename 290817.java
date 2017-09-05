@@ -1,4 +1,4 @@
-class 290817 {
+class 290817{
 	public static void main (String [] args)
 	{
 		System.out.println("hello world!");
