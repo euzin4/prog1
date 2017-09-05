@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class aqui{
+class 310817{
 	public static void main(String[]args){
 	int x;
 	Scanner entrada=new Scanner(System.in);
