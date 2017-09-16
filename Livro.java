@@ -3,10 +3,14 @@ public class Livro{
 	String descricao;
 	double valor;
 	String isbn;
-	Pessoa autor = new Pessoa();
 
-	public String toString(){
-		return "\nDetalhes\n\nNome: "+this.nome+"Descricao: "+this.descricao+"\nValor: "+this.valor+"\nISBN: "+this.isbn+this.autor;
+	public void mostraDetalhes(){
+		System.out.println("\nDetalhes");
+		System.out.println("Nome: "+this.nome);
+		System.out.println("Descrição: "+this.descricao);
+		System.out.println("Valor: "+this.valor);
+		System.out.println("ISBN: "+this.isbn);
+
 	}
 
 }
