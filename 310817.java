@@ -8,7 +8,7 @@ class 310817{
 	x=entrada.nextInt();
 	boolean maiorD = x>=18;
 		if (maiorD){
-			System.out.println("maior de idade");
+			System.out.println("maior de idade"); 
 		}
 		else{
 			System.out.println("menor de idade");
