@@ -6,4 +6,4 @@ public class Dialogo1{
 		JOptionPane.showMessageDialog(null,"Olá "+nome+"!");
 		System.out.println(nome);
 	}
-}
+} 
