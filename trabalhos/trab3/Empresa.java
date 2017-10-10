@@ -4,6 +4,7 @@ import java.util.*;
 public class Empresa{
     List<Funcionario> bodegueiros=new ArrayList<>();
     List<Bebida> produtos=new ArrayList<>();
+    List<Clientes> clientes=new ArrayList<>();
     Scanner scan=new Scanner(System.in);
     public static void main(String[]args){
         Scanner scan=new Scanner(System.in);
@@ -15,7 +16,14 @@ public class Empresa{
         int opc;
  
         do{
-            System.out.println("\n\tMENU\n1-Contratar funcionario\n2-Listar funcionario\n3-Vender bebida\n4-Listas bebidas\n5-Comprar bebidas\n9-sair");
+            System.out.println("\n\tMENU");
+            System.out.println("1-Contratar funcionario");
+            System.out.println("2-Listar funcionario");
+            System.out.println("3-Vender bebida");
+            System.out.println("4-Listas bebidas");
+            System.out.println("5-Comprar bebidas");
+            System.out.println("6-Cadastrar cliente");
+            System.out.println("9-sair");
             opc=scan.nextInt();
             switch(opc){
                 case 1:
@@ -33,6 +41,9 @@ public class Empresa{
                 case 5:
                     empresa.compBeb();
                     break;
+                case 6:
+                    empresa.cadClient();
+                    break;
                 case 9:
                     System.out.println("Até logo!");
                     break;
@@ -44,6 +55,24 @@ public class Empresa{
         
     }
     
+    public void cadClient(){    //terminar
+        String nome,CPF;
+        boolean fiado;
+        String auxfiado;
+        
+        System.out.println("Nome: ");
+        nome=scan.nextLine();
+        System.out.println("CPF: ");
+        CPF=scan.nextLine();
+        System.out.println("Fiado: sim/nao");
+        auxfiado=scan.nextLine();
+        if(auxfiado.equal("sim")){
+            fiado=true;
+        }else{
+            
+        }
+        
+    }
     public void compBeb(){
         String nome;
         double teor,preco;
@@ -54,7 +83,7 @@ public class Empresa{
         nome=scan.nextLine();
         for(Bebida c:produtos){
             if(c.nome.equals(nome)){
-                System.out.print("Quantidade: ");
+                System.out.print("Quantidade/unidades: ");
                 estoque=scan.nextInt();
                 scan.nextLine();
                 c.setEstoqueadc(estoque);
@@ -66,7 +95,7 @@ public class Empresa{
             teor=scan.nextDouble();
             System.out.print("Preço: ");
             preco=scan.nextDouble();
-            System.out.print("Quantidade: ");
+            System.out.print("Quantidade/unidades: ");
             estoque=scan.nextInt();
             System.out.print("Volume/mls: ");
             mls=scan.nextInt();
@@ -92,7 +121,7 @@ public class Empresa{
             if(b.nome.equals(auxnome)){
                 if(b.estoque>0){
                     x=true;
-                    System.out.print("Quantidade: ");
+                    System.out.print("Quantidade/unidades: ");
                     aux1=scan.nextInt();
                     scan.nextLine();
                 }
@@ -100,7 +129,7 @@ public class Empresa{
                     if(x==true){
                         b.setVenda(aux1);
                     }else{
-                        System.out.println("Estoque vazio!");
+                        System.out.println("Estoque de "+auxnome+" vazio!");
                     }
                 }else{
                     System.out.println("Quantidade insuficiente");
