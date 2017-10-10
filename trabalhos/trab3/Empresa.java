@@ -23,6 +23,7 @@ public class Empresa{
             System.out.println("4-Listas bebidas");
             System.out.println("5-Comprar bebidas");
             System.out.println("6-Cadastrar cliente");
+            System.out.println("7-Listar clientes");
             System.out.println("9-sair");
             opc=scan.nextInt();
             switch(opc){
@@ -44,6 +45,9 @@ public class Empresa{
                 case 6:
                     empresa.cadClient();
                     break;
+                case 7:
+                    empresa.listClient();
+                    break;
                 case 9:
                     System.out.println("Até logo!");
                     break;
@@ -55,23 +59,28 @@ public class Empresa{
         
     }
     
-    public void cadClient(){    //terminar
+    public void listClient(){
+        if(clientes.size()==0){
+            System.out.println("Lista vazia!");
+        }else{
+            System.out.println("\tCLIENTES");
+            for(Clientes d:clientes){
+                System.out.println("\nNome: "+d.nome+"\nCPF: "+d.CPF+"\nVender fiado: "+d.fiado);
+            }
+        }
+    }
+    public void cadClient(){
         String nome,CPF;
         boolean fiado;
-        String auxfiado;
-        
-        System.out.println("Nome: ");
+                
+        System.out.print("Nome: ");
         nome=scan.nextLine();
-        System.out.println("CPF: ");
+        System.out.print("CPF: ");
         CPF=scan.nextLine();
-        System.out.println("Fiado: sim/nao");
-        auxfiado=scan.nextLine();
-        if(auxfiado.equal("sim")){
-            fiado=true;
-        }else{
-            
-        }
-        
+        System.out.print("Fiado (true/false): ");
+        fiado=scan.nextBoolean();
+        scan.nextLine();
+        clientes.add(new Clientes(nome,CPF,fiado));
     }
     public void compBeb(){
         String nome;
