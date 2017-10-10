@@ -48,6 +48,7 @@ public class Empresa{
         String nome;
         double teor,preco;
         int estoque,mls;
+        int aux=0;
         
         System.out.print("Nome: ");
         nome=scan.nextLine();
@@ -55,18 +56,22 @@ public class Empresa{
             if(c.nome.equals(nome)){
                 System.out.print("Quantidade: ");
                 estoque=scan.nextInt();
+                scan.nextLine();
                 c.setEstoqueadc(estoque);
-            }else{
-                System.out.print("Teor alcoolico: ");
-                teor=scan.nextDouble();
-                System.out.print("Preço: ");
-                preco=scan.nextDouble();
-                System.out.print("Quantidade: ");
-                estoque=scan.nextInt();
-                System.out.print("Volume/mls: ");
-                mls=scan.nextInt();
-                produtos.add(new Bebida(nome,teor,mls,preco,estoque));
+                aux=1;
             }
+        }
+        if(aux==0){
+            System.out.print("Teor alcoolico: ");
+            teor=scan.nextDouble();
+            System.out.print("Preço: ");
+            preco=scan.nextDouble();
+            System.out.print("Quantidade: ");
+            estoque=scan.nextInt();
+            System.out.print("Volume/mls: ");
+            mls=scan.nextInt();
+            scan.nextLine();
+            produtos.add(new Bebida(nome,teor,mls,preco,estoque));
         }
     }
     public void mostraProd(){
